@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+user=User.create(:email => 'admin@gmail.com', :password =>'passss')
+user.add_role(:admin)
+user.save
+
+100.times do 
+   Post.create(:title=>Faker::Company.name, :content=>Faker::Company.bs) 
+end
